@@ -1,4 +1,4 @@
-# Main file.
+# Main file for Kivy version
 # 
 # Copyright 2014 Heikki & Juha
 #
@@ -14,8 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # 
+# @package      multimer
+# @subpackage   kivy
 # @copyright    Copyright (c) Heikki & Juha
 # @author       Juha Auvinen <juha@saimiri.fi>
 # @license      http://www.apache.org/licenses/LICENSE-2.0 Apache License 2.0
 # @link         http://www.github.com/saimiri/multimer
 # @since        File available since Release 0.1
+
+from kivy.app import App
+from kivy.uix.tabbedpanel import TabbedPanel
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.progressbar import ProgressBar
+
+class MultimerApp(App):
+  pass
+
+if __name__ == '__main__':
+  MultimerApp().run()

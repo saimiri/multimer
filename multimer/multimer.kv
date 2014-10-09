@@ -1,0 +1,99 @@
+BoxLayout:
+  orientation: "vertical"
+  Label:
+    text: "Last alarm:\n\"Go get drunk!\""
+    size_hint_y: 0.5
+    # rgb = 164, 255, 166
+    color: 0, 0, 0, 1
+    halign: "center"
+    canvas.before:
+      Color:
+        rgba: 0.64, 1, 0.65, 1
+      Rectangle:
+        pos: self.pos
+        size: self.size
+  BoxLayout:
+# FIXME: Sizes need to be calculated dynamically. Otherwise there will be either
+# too much space when the time string is short or it doesn't fit the bounding
+# box when it's too long.
+    size_hint_y: 0.3
+    #spacing: 5
+    Label:
+      text: "5:35"
+      font_size: 20
+#      text_size: 50, None
+      size_hint_x: 2
+#     size: self.texture_size
+      halign: "center"
+    ProgressBar:
+      value: 37
+      max: 100
+      size_hint_x: 6
+    Label:
+      text: "15:00"
+      font_size: 20
+#      text_size: 50, None
+      size_hint_x: 2
+#     size: self.texture_size
+      halign: "center"
+  TabbedPanel:
+    id: main
+    do_default_tab: False
+    size_hint_y: 4
+    DayTab:
+      id: tab_1
+      text: "Day 1"
+    DayTab:
+      id: tab_2
+      text: "Day 2"
+    DayTab:
+      id: tab_3
+      text: "Day 3"
+    DayTab:
+      id: tab_4
+      text: "Day 4"
+    DayTab:
+      id: tab_5
+      text: "Day 5"
+    DayTab:
+      id: tab_6
+      text: "Day 6"
+    DayTab:
+      id: tab_7
+      text: "Day 7"
+  BoxLayout:
+    size_hint_y: 1
+#    TextInput:
+#      multiline: True
+#      readonly: True
+#      text: "- Log messages will be displayed here in the desktop version."
+    GridLayout:
+      cols: 2
+      rows: 2
+      Button:
+        text: "Save"
+      Button:
+        text: "Load"
+      Button:
+        text: "Save As"
+      Button:
+        text: "Config"
+    Button:
+      text: "Start"
+#      text: "Stop"
+      font_size: 40
+      bold: True
+      color: [1, 1, 1, 1]
+#     RGB: 83, 218, 46
+      background_color: [0.33, 0.85, 0.18, 1]
+#     RGB: 255, 82, 0
+#      background_color: [1, 0.32, 0, 1]
+      background_normal: ""
+      background_down: ""
+      
+
+<DayTab@TabbedPanelItem>:
+  TextInput:
+    multiline: True
+    # background_color: [250, 255, 198, 1]
+    # background_color: [0.98, 1, 0.77, 1]
